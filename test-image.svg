@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 150" width="520" height="150" role="img" aria-label="蓝色方块、橙色圆形和绿色三角形">
+  <rect width="520" height="150" rx="6" fill="#eef3fa"/>
+  <rect x="52" y="35" width="80" height="80" rx="5" fill="#244fc4"/>
+  <circle cx="260" cy="75" r="42" fill="#cc652c"/>
+  <path d="M428 31 476 115H380Z" fill="#21816c"/>
+</svg>

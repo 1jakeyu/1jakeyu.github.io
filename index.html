@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="仅检查本次访问中 HTML、CSS、JavaScript 和 SVG 静态资源的载入情况。" />
+  <title>GitHub Pages 访问测试</title>
+  <link id="external-css" rel="stylesheet" href="style.css" onload="this.dataset.loadState='loaded'" onerror="this.dataset.loadState='error'" />
+  <script id="external-js" src="script.js" defer onerror="document.getElementById('js-status').textContent='载入失败';document.getElementById('summary').textContent='外部脚本未能载入，其余状态未完成核验。'"></script>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="intro">一个独立的静态测试页面</p>
+      <h1>GitHub Pages 访问测试</h1>
+      <p class="description">查看文字、样式、脚本和图片，是否在这次访问中正常载入。</p>
+    </header>
+
+    <section aria-labelledby="checks-title">
+      <h2 id="checks-title">资源检查</h2>
+      <dl class="checks">
+        <div><dt>HTML 页面文字</dt><dd id="html-status" data-status="passed">已显示</dd></div>
+        <div><dt>外部 CSS 样式</dt><dd id="css-status" data-status="pending">等待检查</dd></div>
+        <div><dt>外部 JavaScript 脚本</dt><dd id="js-status" data-status="pending">等待执行</dd></div>
+        <div><dt>独立 SVG 图片</dt><dd id="image-status" data-status="pending">等待检查</dd></div>
+      </dl>
+      <p class="css-example">CSS 视觉示例：蓝色背景，白色文字。</p>
+    </section>
+
+    <figure>
+      <img id="test-image" src="test-image.svg" width="520" height="150" alt="独立 SVG 测试图：蓝色方块、橙色圆形和绿色三角形。" onload="this.dataset.loadState='loaded'" onerror="this.dataset.loadState='error'" />
+      <figcaption>独立图片资源：三个简单的彩色图形。</figcaption>
+    </figure>
+
+    <p id="summary" class="summary" role="status" aria-live="polite">等待外部资源检查。</p>
+    <p class="protocol">当前页面协议：<strong id="protocol">等待脚本读取</strong></p>
+    <p class="note">结果仅对应当前设备、当前网络的这一次访问，不代表其他环境的可访问情况。</p>
+    <noscript><p>浏览器未执行脚本，脚本与资源状态无法完成核验。</p></noscript>
+  </main>
+</body>
+</html>
